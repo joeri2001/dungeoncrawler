@@ -5,6 +5,12 @@ var max_speed = 250
 var acceleration = 20000
 var motion = Vector2()
 
+# animation variables
+onready var animation = $AnimationPlayer
+
+# health
+var health = 5
+
 func _physics_process(delta):
 	# movement
 	var axis = get_input_axis()
@@ -14,8 +20,19 @@ func _physics_process(delta):
 		apply_movement(axis * acceleration * delta)
 	motion = move_and_slide(motion)
 	
-	# have player look at mouse cursor
-	look_at(get_global_mouse_position())
+	# animations
+	var running = Input.is_action_pressed("up") || Input.is_action_pressed("down") || Input.is_action_pressed("right") || Input.is_action_pressed("left")
+	var right = Input.is_action_pressed("right")
+	var left = Input.is_action_pressed("left")
+	if running:
+		animation.play("Running")
+	else:
+		animation.play("Idle")
+	if right:
+		$Sprite.flip_h = false
+	if left:
+		$Sprite.flip_h = true
+
 
 # movement functions
 func get_input_axis():
@@ -34,4 +51,11 @@ func apply_movement(acceleration_amount):
 	motion += acceleration_amount
 	motion = motion.limit_length(max_speed)
 
+func kill():
+	get_tree().reload_current_scene()
 
+func _on_Area2D_body_entered(body):
+	if "MadViking" in body.name:
+		health -= 1
+	if health <= 0:
+		kill()
