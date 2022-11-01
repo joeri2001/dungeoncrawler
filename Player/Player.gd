@@ -32,6 +32,17 @@ func _physics_process(delta):
 		$Sprite.flip_h = false
 	if left:
 		$Sprite.flip_h = true
+	
+#	if health == 1:
+#		$Label.set_text("1/5")
+#	if health == 2:
+#		$Label.set_text("2/5")
+#	if health == 3:
+#		$Label.set_text("3/5")
+#	if health == 4:
+#		$Label.set_text("4/5")
+#	if health == 5:
+#		$Label.set_text("5/5")
 
 
 # movement functions

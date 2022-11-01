@@ -12,6 +12,8 @@ func _physics_process(_delta):
 	var Player = get_parent().get_node("Player")
 	animation.play("Running")
 	position += (Player.position - position)/150
+	
+	get_node("Control/HealthBar").value = health
 
 func _on_Area2D_body_entered(body):
 	if "Bullet" in body.name:
