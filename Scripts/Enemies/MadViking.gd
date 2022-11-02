@@ -35,7 +35,6 @@ func _process(_delta):
 		animation.play("Running")
 		position += (Player.position - position)/150
 	if health <= 0:
-		print(health)
 		animation.play("Death")
 
 func _on_Area2D_body_entered(body):
