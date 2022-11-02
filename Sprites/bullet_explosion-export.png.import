@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/MadViking.png-a132682d4ebdc6ef86a69d313030d820.stex"
+path="res://.import/bullet_explosion-export.png-dbc369953f805c509be7d937b6c15ab8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/MadViking.png"
-dest_files=[ "res://.import/MadViking.png-a132682d4ebdc6ef86a69d313030d820.stex" ]
+source_file="res://Sprites/bullet_explosion-export.png"
+dest_files=[ "res://.import/bullet_explosion-export.png-dbc369953f805c509be7d937b6c15ab8.stex" ]
 
 [params]
 

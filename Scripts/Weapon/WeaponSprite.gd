@@ -1,6 +1,6 @@
 extends Sprite
 
-func _process(delta):
+func _process(_delta):
 	var vert = get_global_mouse_position()
 	var gpos = self.get_global_position()
 
