@@ -1,7 +1,7 @@
 extends RigidBody2D
 
 var bullet_speed = 500
-var bullet = preload("res://Weapons/Default Gun/DefaultBullet.tscn")
+var bullet = preload("res://Weapons/Default Weapon/Bullet.tscn")
 var canshoot = true
 
 func _ready():
@@ -13,7 +13,7 @@ func _physics_process(_delta):
 		canshoot = false
 		fire()
 		# delay on shooting
-		yield(get_tree().create_timer(0.3), "timeout")
+		yield(get_tree().create_timer(1.0), "timeout")
 		canshoot = true
 
 func fire():

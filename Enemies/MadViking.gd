@@ -13,10 +13,12 @@ func _physics_process(_delta):
 	animation.play("Running")
 	position += (Player.position - position)/150
 	
+	# show healthbar
 	get_node("Control/HealthBar").value = health
 
 func _on_Area2D_body_entered(body):
 	if "Bullet" in body.name:
 		health -= 1
 	if health <= 0:
+		Global.score += 1
 		queue_free()
