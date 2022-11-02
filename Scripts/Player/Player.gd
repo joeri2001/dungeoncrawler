@@ -55,7 +55,7 @@ func apply_movement(acceleration_amount):
 	motion = motion.limit_length(max_speed)
 
 func kill():
-	get_tree().reload_current_scene()
+	var _UNUSEDreload_current_scene = get_tree().reload_current_scene()
 
 func _on_Area2D_body_entered(body):
 	if "MadViking" in body.name:

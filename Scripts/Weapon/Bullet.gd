@@ -3,9 +3,6 @@ extends RigidBody2D
 # animation variables
 onready var animation = $AnimationPlayer
 
-func _ready():
-	pass
-
 func _on_Area2D_body_entered(body):
 	if "MadViking" in body.name:
 		animation.play("bullet_explosion")

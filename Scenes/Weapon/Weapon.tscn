@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/Weapon/WeaponSprite.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Weapon/Weapon.gd" type="Script" id=2]
 [ext_resource path="res://Sprites/gun.png" type="Texture" id=3]
+[ext_resource path="res://Sounds/laserShoot.wav" type="AudioStream" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -61,3 +62,6 @@ anims/RESET = SubResource( 2 )
 anims/Reload = SubResource( 3 )
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="ShootingSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
