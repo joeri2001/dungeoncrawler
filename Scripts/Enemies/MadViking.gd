@@ -19,6 +19,8 @@ func _physics_process(_delta):
 		speed = 1
 	if !player_in_range || !player_in_sight:
 		speed = 0
+	if health <= 0:
+		speed = 0
 
 func _process(_delta):
 	# show healthbar values
