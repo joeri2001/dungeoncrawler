@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Sprites/player.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Player/Player.gd" type="Script" id=2]
@@ -7,9 +7,10 @@
 [ext_resource path="res://Scripts/UI/ScoreText.gd" type="Script" id=5]
 [ext_resource path="res://font.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://Scripts/UI/AmmoText.gd" type="Script" id=7]
+[ext_resource path="res://Scripts/UI/PauseMenu.gd" type="Script" id=8]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 12, 20 )
+[sub_resource type="RectangleShape2D" id=15]
+extents = Vector2( 12, 21 )
 
 [sub_resource type="Animation" id=8]
 resource_name = "Idle"
@@ -59,8 +60,8 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3 ]
 }
 
-[sub_resource type="RectangleShape2D" id=10]
-extents = Vector2( 13, 21 )
+[sub_resource type="RectangleShape2D" id=16]
+extents = Vector2( 14, 23 )
 
 [sub_resource type="StyleBoxFlat" id=11]
 bg_color = Color( 0.576471, 0.819608, 0.494118, 1 )
@@ -81,6 +82,10 @@ border_color = Color( 1, 1, 1, 1 )
 [sub_resource type="DynamicFont" id=13]
 font_data = ExtResource( 6 )
 
+[sub_resource type="DynamicFont" id=14]
+size = 32
+font_data = ExtResource( 6 )
+
 [node name="Player" type="KinematicBody2D"]
 z_index = 10
 script = ExtResource( 2 )
@@ -92,7 +97,8 @@ texture = ExtResource( 1 )
 hframes = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
+position = Vector2( 0, -1 )
+shape = SubResource( 15 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 playback_speed = 10.0
@@ -106,8 +112,8 @@ position = Vector2( -3, 6 )
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 0, -2 )
-shape = SubResource( 10 )
+position = Vector2( 0, -1 )
+shape = SubResource( 16 )
 
 [node name="Control" type="Control" parent="."]
 margin_right = 40.0
@@ -167,5 +173,23 @@ margin_bottom = -251.0
 custom_fonts/font = SubResource( 13 )
 text = "ammo:"
 uppercase = true
+
+[node name="PauseMenu" type="ColorRect" parent="."]
+pause_mode = 2
+visible = false
+margin_left = -512.0
+margin_top = -300.0
+margin_right = 512.0
+margin_bottom = 300.0
+color = Color( 0, 0, 0, 0.392157 )
+script = ExtResource( 8 )
+
+[node name="Label" type="Label" parent="PauseMenu"]
+margin_left = 440.0
+margin_top = 2.0
+margin_right = 584.0
+margin_bottom = 50.0
+custom_fonts/font = SubResource( 14 )
+text = "paused"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

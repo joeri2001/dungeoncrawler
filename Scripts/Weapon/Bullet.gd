@@ -4,7 +4,7 @@ extends RigidBody2D
 onready var animation = $AnimationPlayer
 
 func _ready():
-	pass # Replace with function body.
+	pass
 
 func _on_Area2D_body_entered(body):
 	if "MadViking" in body.name:

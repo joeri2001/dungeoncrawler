@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-var bullet_speed = 250
+var bullet_speed = 350
 var bullet = preload("res://Scenes/Weapon/Bullet.tscn")
 var canshoot = true
 
