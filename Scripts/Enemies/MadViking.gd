@@ -53,12 +53,10 @@ func _on_Area2D_body_entered(body):
 func _on_Sight_body_entered(body):
 	if "Player" in body.name:
 		player_in_range = true
-		print("player in range: ", player_in_range)
 
 func _on_Sight_body_exited(body):
 	if "Player" in body.name:
 		player_in_range = false
-		print("player in range: ", player_in_range)
 
 func SightCheck():
 	if player_in_range:
@@ -67,7 +65,5 @@ func SightCheck():
 		if sight_check:
 			if sight_check.collider.name == "Player":
 				player_in_sight = true
-				print("player in sight: ", player_in_sight)
 			else:
 				player_in_sight = false
-				print("player in sight: ", player_in_sight)
