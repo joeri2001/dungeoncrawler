@@ -41,6 +41,8 @@ func _on_Area2D_body_entered(body):
 	if "Bullet" in body.name:
 		health -= 1
 	if "Player" in body.name:
+		$Timer.start(0.1)
+		yield($Timer, "timeout")
 		health = 0
 	if health <= 0:
 		Global.score += 1
