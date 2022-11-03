@@ -15,18 +15,6 @@ onready var animation = $AnimationPlayer
 func _physics_process(_delta):
 	SightCheck()
 	
-	if player_in_range && player_in_sight:
-		speed = 1
-	if !player_in_range || !player_in_sight:
-		speed = 0
-	if health <= 0:
-		speed = 0
-
-func _process(_delta):
-	# show healthbar values
-	get_node("Control/HealthBar").max_value = max_health
-	get_node("Control/HealthBar").value = health
-	
 	motion += (Vector2(Player.position) - position)
 	motion = motion.normalized() * speed
 	var _UNUSEDmove_and_collide = move_and_collide(motion)
@@ -38,6 +26,18 @@ func _process(_delta):
 		position += (Player.position - position)/150
 	if health <= 0:
 		animation.play("Death")
+	
+	if player_in_range && player_in_sight:
+		speed = 1
+	if !player_in_range || !player_in_sight:
+		speed = 0
+	if health <= 0:
+		speed = 0
+		
+func _process(_delta):
+	# show healthbar values
+	get_node("Control/HealthBar").max_value = max_health
+	get_node("Control/HealthBar").value = health
 
 func _on_Area2D_body_entered(body):
 	if "Bullet" in body.name:
