@@ -12,7 +12,6 @@ func _on_Load_pressed():
 			var player_data = file.get_var()
 			# add all variables to load seperately
 			Global.coins = player_data["coins"]
-			print(player_data)
 			file.close()
 	
 	var _UNUSEDchange_scene = get_tree().change_scene("res://Scenes/Lobby.tscn")

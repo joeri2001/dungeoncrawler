@@ -17,5 +17,4 @@ func _on_Save_pressed():
 	var error = file.open_encrypted_with_pass(save_path, File.WRITE, "tkgeAqI488#j")
 	if error == OK:
 		file.store_var(save_data)
-		print(save_data)
 		file.close()
