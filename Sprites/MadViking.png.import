@@ -2,7 +2,7 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/MadViking.png-a132682d4ebdc6ef86a69d313030d820.stex"
+path="res://import/MadViking.png-a132682d4ebdc6ef86a69d313030d820.stex"
 metadata={
 "vram_texture": false
 }
@@ -10,7 +10,7 @@ metadata={
 [deps]
 
 source_file="res://Sprites/MadViking.png"
-dest_files=[ "res://.import/MadViking.png-a132682d4ebdc6ef86a69d313030d820.stex" ]
+dest_files=[ "res://import/MadViking.png-a132682d4ebdc6ef86a69d313030d820.stex" ]
 
 [params]
 

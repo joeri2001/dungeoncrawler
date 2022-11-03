@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/laserShoot.wav-caa0ec439745040d2435ea1c79299a45.sample"
+path="res://import/laserShoot.wav-caa0ec439745040d2435ea1c79299a45.sample"
 
 [deps]
 
 source_file="res://Sounds/laserShoot.wav"
-dest_files=[ "res://.import/laserShoot.wav-caa0ec439745040d2435ea1c79299a45.sample" ]
+dest_files=[ "res://import/laserShoot.wav-caa0ec439745040d2435ea1c79299a45.sample" ]
 
 [params]
 

@@ -1,8 +1,8 @@
 extends Node
 
-var score = 0
-var difficulty = 1.0
+var coins = 0
 
 # upgrades
+var health = 5
 var ammo = 25
 var shot_timer = 1.0

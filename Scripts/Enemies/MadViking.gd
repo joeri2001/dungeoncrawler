@@ -49,8 +49,7 @@ func _on_Area2D_body_entered(body):
 		remove_child($Area2D)
 		health = 0
 	if health <= 0:
-		Global.score += 1
-		Global.difficulty += 1
+		Global.coins += 1
 		$Timer.start(0.5)
 		yield($Timer, "timeout")
 		queue_free()

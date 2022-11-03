@@ -1,0 +1,69 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scripts/SaveLoad/Save.gd" type="Script" id=1]
+[ext_resource path="res://font.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Scripts/UI/PauseMenu.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/UI/ScoreText.gd" type="Script" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 2 )
+
+[node name="PauseMenu" type="ColorRect"]
+pause_mode = 2
+margin_right = 1024.0
+margin_bottom = 600.0
+color = Color( 0.156863, 0.156863, 0.156863, 0.392157 )
+script = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 312.0
+margin_top = 1.0
+margin_right = 456.0
+margin_bottom = 49.0
+custom_fonts/font = SubResource( 1 )
+text = "paused"
+
+[node name="MoneyUI" type="Control" parent="."]
+margin_top = -1.0
+margin_right = 40.0
+margin_bottom = 39.0
+
+[node name="Money" type="Label" parent="MoneyUI"]
+modulate = Color( 0.827451, 0.34902, 0.34902, 1 )
+margin_left = 385.0
+margin_top = 50.0
+margin_right = 453.0
+margin_bottom = 74.0
+custom_fonts/font = SubResource( 2 )
+text = "test"
+uppercase = true
+script = ExtResource( 4 )
+
+[node name="MoneyText" type="Label" parent="MoneyUI"]
+margin_left = 312.0
+margin_top = 50.0
+margin_right = 383.0
+margin_bottom = 74.0
+custom_fonts/font = SubResource( 2 )
+text = "coins:"
+align = 2
+uppercase = true
+
+[node name="Save" type="Control" parent="."]
+margin_top = -1.0
+margin_right = 40.0
+margin_bottom = 39.0
+script = ExtResource( 1 )
+
+[node name="Save" type="Button" parent="Save"]
+margin_left = 10.0
+margin_top = 406.0
+margin_right = 116.0
+margin_bottom = 440.0
+text = "save"
+
+[connection signal="pressed" from="Save/Save" to="Save" method="_on_Save_pressed"]

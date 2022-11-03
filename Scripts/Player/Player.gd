@@ -9,7 +9,7 @@ var motion = Vector2()
 onready var animation = $AnimationPlayer
 
 # health
-var health = 5
+var health = Global.health
 
 func _physics_process(delta):
 	# movement
@@ -55,7 +55,7 @@ func apply_movement(acceleration_amount):
 	motion = motion.limit_length(max_speed)
 
 func kill():
-	var _UNUSEDreload_current_scene = get_tree().reload_current_scene()
+	var _UNUSEDchange_scene = get_tree().change_scene("res://Scenes/Lobby.tscn")
 
 func _on_Area2D_body_entered(body):
 	if "MadViking" in body.name:
