@@ -45,6 +45,8 @@ func _on_Area2D_body_entered(body):
 	if "Player" in body.name:
 		$Timer.start(0.1)
 		yield($Timer, "timeout")
+		remove_child($CollisionShape2D)
+		remove_child($Area2D)
 		health = 0
 	if health <= 0:
 		Global.score += 1

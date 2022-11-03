@@ -1,9 +1,9 @@
 extends RigidBody2D
 
-var bullet_speed = 350
+var bullet_speed = 500
 var bullet = preload("res://Scenes/Weapon/Bullet.tscn")
 var canshoot = true
-
+var shot_timer = 1.0
 # animation variables
 onready var animation = $AnimationPlayer
 
@@ -17,11 +17,13 @@ func _physics_process(_delta):
 		fire()
 		Global.ammo -= 1
 		animation.play("Reload")
-		
 		# delay on shooting
-		$Timer.start(1.0)
+		if Global.shot_timer < 0.7:
+			shot_timer = 0.7
+		else:
+			shot_timer = Global.shot_timer
+		$Timer.start(shot_timer)
 		yield($Timer, "timeout")
-		
 		canshoot = true
 
 func fire():
